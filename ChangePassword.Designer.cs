@@ -82,6 +82,7 @@
             this.DoneButton.TabIndex = 8;
             this.DoneButton.Text = "Done";
             this.DoneButton.UseVisualStyleBackColor = true;
+            this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
             // 
             // ChangePassword
             // 
