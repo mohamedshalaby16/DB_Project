@@ -57,9 +57,19 @@ namespace DBapplication
             string query = $"UPDATE Artists SET Password = '{newpass}'  WHERE ArtistID = {artistid};";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int ChangeGalleryPass(string newpass, int artistid)
+        public int ChangeGalleryPass(string newpass, int galleryid)
         {
-            string query = $"UPDATE Artists SET Password = '{newpass}'  WHERE ArtistID = {artistid};";
+            string query = $"UPDATE Galleries SET Password = '{newpass}'  WHERE GalleryID = {galleryid};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int ChangeUserPass(string newpass, int userid)
+        {
+            string query = $"UPDATE Users SET Password = '{newpass}'  WHERE UserID = {userid};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int ChangeAdminPass(string newpass, int adminid)
+        {
+            string query = $"UPDATE Users SET Password = '{newpass}'  WHERE UserID = {adminid};";
             return dbMan.ExecuteNonQuery(query);
         }
         public int AddExhibition(int exhibitionid, string name,string sdate, string edate,int galleryid,int artworkid)
