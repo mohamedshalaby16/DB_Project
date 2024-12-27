@@ -84,9 +84,9 @@ namespace DBapplication
             string query = $"SELECT Name , GalleryID FROM Galleries ";
         return dbMan.ExecuteReader (query);
         }
-        public DataTable ShowExhibition()
+        public DataTable ShowExhibition(int galleryid)
         {
-            string query = $"SELECT   E.ExhibitionID , E.Name AS ExhibitionName , E.StartDate , E.EndDate, G.Name AS GalleryName,A.Title AS ArtworkTitle, A.Description AS ArtworkDescription FROM     Exhibitions E INNER JOIN   Galleries G ON E.GalleryID = G.GalleryID INNER JOIN     Artworks A ON E.ArtworkID = A.ArtworkID;";
+            string query = $"SELECT   E.ExhibitionID , E.Name AS ExhibitionName , E.StartDate , E.EndDate, G.Name AS GalleryName,A.Title AS ArtworkTitle \r\nFROM     Exhibitions E, Artworks A, Galleries G\r\nWHERE    G.GalleryID={galleryid} AND E.ArtworkID=A.ArtworkID AND E.GalleryID=G.GalleryID ;";
         return dbMan.ExecuteReader(query) ;
         }
 
@@ -101,7 +101,16 @@ namespace DBapplication
             string query = $"SELECT \r\n    U.Name AS User_Name,\r\n    A.Title AS Artwork_Title,\r\n    O.Price AS Highest_Price\r\nFROM \r\n    Ownership O\r\nJOIN \r\n    Users U ON O.UserID = U.UserID\r\nJOIN \r\n    Artworks A ON O.ArtworkID = A.ArtworkID\r\nJOIN \r\n    Artists R ON A.ArtistID = R.ArtistID\r\nWHERE \r\n    R.ArtistID = {artistid}\r\n    AND O.Price = (\r\n        SELECT MAX(O2.Price)\r\n        FROM Ownership O2\r\n        JOIN Artworks A2 ON O2.ArtworkID = A2.ArtworkID\r\n        JOIN Artists R2 ON A2.ArtistID = R2.ArtistID\r\n        WHERE R2.ArtistID = {artistid}\r\n    );\r\n ";
             return dbMan.ExecuteReader (query);
         }
-        
+        public int AddAuction( int galleryid, int artworkid, string name, int sellingprice)
+        {
+            string query = $"INSERT INTO AuctionHouse (GalleryID,ArtworkID,Name,SellingPrice) VALUES ({galleryid},{artworkid},'{name}',{sellingprice})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetHighestAuction(int galleryid)
+        {
+            string query = $"SELECT AuctionID, SellingPrice, ArtworkID FROM AuctionHouse WHERE GalleryID = '{galleryid}'  ORDER BY SellingPrice DESC";
+            return dbMan.ExecuteReader (query);
 
+        }
     }
 }
