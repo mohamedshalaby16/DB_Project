@@ -64,6 +64,19 @@ namespace DB_Project
             {
                 MessageBox.Show("Passwords Don't Match");
             }
+            if (type == 1)
+            {
+                int x = controllerobj.ChangeAdminPass(newpass.Text, username);
+                if (x == 0)
+                {
+                    MessageBox.Show("Password Not Changed");
+                }
+                else
+                {
+                    MessageBox.Show("Password Updated Successfully");
+                }
+
+            }
             if (type == 4)
             {
                 int x = controllerobj.ChangeArtistPass(newpass.Text, username);
@@ -77,7 +90,33 @@ namespace DB_Project
                 }
 
             }
-            MessageBox.Show("Done");
+            if (type == 2)
+            {
+                int x = controllerobj.ChangeUserPass(newpass.Text, username);
+                if (x == 0)
+                {
+                    MessageBox.Show("Password Not Changed");
+                }
+                else
+                {
+                    MessageBox.Show("Password Updated Successfully");
+                }
+
+            }
+            if (type == 3)
+            {
+                int x = controllerobj.ChangeGalleryPass(newpass.Text, username);
+                if (x == 0)
+                {
+                    MessageBox.Show("Password Not Changed");
+                }
+                else
+                {
+                    MessageBox.Show("Password Updated Successfully");
+                }
+
+            }
+
         }
     }
 }
