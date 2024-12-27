@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Xml.Linq;
 using DB_Project;
 using System.Runtime.InteropServices.ComTypes;
+using System.Collections;
 
 namespace DBapplication
 {
@@ -102,6 +103,37 @@ namespace DBapplication
             return dbMan.ExecuteReader (query);
         }
         
+        public DataTable ViewOwnedArtworks(int id)
+        {
+            string query = $"SELECT R.ArtworkID,Title,Price FROM Ownership O,Artworks R WHERE R.ArtworkID=O.ArtworkID AND O.UserID= {id}";
+            return dbMan.ExecuteReader(query);
+        }
 
+        public int RequestVerification(int id, int artworkid,string date, string status)
+        {
+            string query = $"INSERT INTO VerificationRequest (UserID,ArtworkID,RequestDate,VerificationStatus) VALUES( {id},{artworkid},'{date}', '{status}');";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
+        public DataTable getArtworks()
+        {
+            string query = $"SELECT Title,ArtworkID FROM Artworks";
+            return dbMan.ExecuteReader(query);
+        }
+        public int giveFeedback(int id, int artworkid, string comment, int rating)
+        {
+            string query = $"INSERT INTO Reviews (UserID,ArtworkID,Comment,Rating) VALUES ({id},{artworkid},'{comment}',{rating});";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable getRequestStatus(int id,int artworkid)
+        {
+            string query = $"SELECT VerificationStatus FROM VerificationRequest WHERE UserID={id} AND ArtworkID={artworkid};";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable getArtworksofuser(int id)
+        {
+            string query = $"SELECT A.Title, A.ArtworkID FROM Artworks A INNER JOIN VerificationRequest V ON V.ArtworkID = A.ArtworkID  WHERE V.UserID = {id};";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

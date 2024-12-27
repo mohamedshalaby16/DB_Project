@@ -69,5 +69,10 @@ namespace DB_Project
             dataGridView2.DataSource=controllerobj.ShowHighestBuyer(username);
             dataGridView2.Refresh();
         }
+
+        private void Artist_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
