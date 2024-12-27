@@ -5,6 +5,12 @@ USE ArtManagementSystem;
 
 
 
+CREATE TABLE Admin(
+AdminID int primary key,
+Password varchar(50),
+
+
+);
 
 CREATE TABLE Artists (
     ArtistID int primary key,
@@ -47,7 +53,7 @@ CREATE TABLE  Ownership (
 	UserID int ,
 
     ArtworkID int not null unique,
-	Price bigint not null, 
+	Price bigint not null,
     OwnershipDate date not null,
     FOREIGN KEY (ArtworkID) REFERENCES Artworks(ArtworkID) ON DELETE CASCADE,
 	 FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE,
@@ -104,9 +110,12 @@ CREATE TABLE VerificationRequest (
     ArtworkID int not null,
 	primary key( AuctionID,GalleryID),
 	Name varchar(100) not null,
-    StartingPrice bigint not null,
+    SellingPrice bigint not null,
 	);	
 	
+
+	INSERT INTO Admin(AdminID,Password) VALUES
+	( 123 , 'pass123');
 	
   INSERT INTO Artists(ArtistID, FirstName, LastName, Password, Email, Nationality) VALUES
 (1, 'Pablo', 'Picasso', 'password123', 'picasso@mail.com', 'Spanish'),
@@ -224,6 +233,7 @@ INSERT INTO Ownership (RecordID,UserID, ArtworkID, Price, OwnershipDate) VALUES
 
 
 
+
 INSERT INTO Galleries (GalleryID, Password, Name, Location, ContactInfo) VALUES
 (1, 'gallery1pass', 'Modern Art Gallery', 'New York', 'contact1@mail.com'),
 (2, 'gallery2pass', 'Impressionist Center', 'Paris', 'contact2@mail.com'),
@@ -331,7 +341,7 @@ INSERT INTO VerificationRequest (RequestID, UserID, ArtworkID, RequestDate, Veri
 
 
 
-INSERT INTO AuctionHouse (AuctionID, GalleryID, ArtworkID, Name, StartingPrice) VALUES
+INSERT INTO AuctionHouse (AuctionID, GalleryID, ArtworkID, Name, SellingPrice) VALUES
 (1, 1, 1, 'Winter Wonders Auction', 500000),
 (2, 2, 2, 'Spring Delights Auction', 700000),
 (3, 3, 3, 'Summer Showcase Auction', 1500000),
