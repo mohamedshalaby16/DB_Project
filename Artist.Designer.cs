@@ -34,14 +34,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.artworkidtxt = new System.Windows.Forms.TextBox();
-            this.artistidtxt = new System.Windows.Forms.TextBox();
             this.descriptiontxt = new System.Windows.Forms.TextBox();
             this.datetxt = new System.Windows.Forms.TextBox();
             this.dimtxt = new System.Windows.Forms.TextBox();
             this.titletxt = new System.Windows.Forms.TextBox();
             this.insertartworkbrn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.showartwork = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,28 +100,12 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Title:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 191);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 16);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "ArtistID:";
-            // 
             // artworkidtxt
             // 
             this.artworkidtxt.Location = new System.Drawing.Point(129, 45);
             this.artworkidtxt.Name = "artworkidtxt";
             this.artworkidtxt.Size = new System.Drawing.Size(183, 22);
             this.artworkidtxt.TabIndex = 7;
-            // 
-            // artistidtxt
-            // 
-            this.artistidtxt.Location = new System.Drawing.Point(129, 191);
-            this.artistidtxt.Name = "artistidtxt";
-            this.artistidtxt.Size = new System.Drawing.Size(183, 22);
-            this.artistidtxt.TabIndex = 8;
             // 
             // descriptiontxt
             // 
@@ -162,19 +147,41 @@
             this.insertartworkbrn.UseVisualStyleBackColor = false;
             this.insertartworkbrn.Click += new System.EventHandler(this.insertartworkbrn_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(395, 45);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(375, 168);
+            this.dataGridView1.TabIndex = 14;
+            // 
+            // showartwork
+            // 
+            this.showartwork.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.showartwork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showartwork.Location = new System.Drawing.Point(470, 262);
+            this.showartwork.Name = "showartwork";
+            this.showartwork.Size = new System.Drawing.Size(222, 39);
+            this.showartwork.TabIndex = 15;
+            this.showartwork.Text = "Show Artworks";
+            this.showartwork.UseVisualStyleBackColor = false;
+            this.showartwork.Click += new System.EventHandler(this.showartwork_Click);
+            // 
             // Artist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.showartwork);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.insertartworkbrn);
             this.Controls.Add(this.titletxt);
             this.Controls.Add(this.dimtxt);
             this.Controls.Add(this.datetxt);
             this.Controls.Add(this.descriptiontxt);
-            this.Controls.Add(this.artistidtxt);
             this.Controls.Add(this.artworkidtxt);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -183,6 +190,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Artist";
             this.Text = "Artist";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,13 +204,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox artworkidtxt;
-        private System.Windows.Forms.TextBox artistidtxt;
         private System.Windows.Forms.TextBox descriptiontxt;
         private System.Windows.Forms.TextBox datetxt;
         private System.Windows.Forms.TextBox dimtxt;
         private System.Windows.Forms.TextBox titletxt;
         private System.Windows.Forms.Button insertartworkbrn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button showartwork;
     }
 }

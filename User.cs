@@ -12,9 +12,16 @@ namespace DB_Project
 {
     public partial class User : Form
     {
-        public User()
+        int username;
+        public User(int u)
         {
             InitializeComponent();
+            username = u;
+        }
+
+        private void User_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

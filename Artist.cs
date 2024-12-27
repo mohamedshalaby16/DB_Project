@@ -14,17 +14,21 @@ namespace DB_Project
     public partial class Artist : Form
     {
         Controller controllerobj;
-        public Artist()
+        int username;
+        public Artist(int u)
         {
             InitializeComponent();
             controllerobj = new Controller();
+            username = u;
+
+
         }
 
         private void insertartworkbrn_Click(object sender, EventArgs e)
         {
-            if(artistidtxt.Text.Length!=0 || artworkidtxt.Text.Length!=0 || titletxt.Text.Length != 0 ||datetxt.Text.Length!=0)
+            if(artworkidtxt.Text.Length!=0 || titletxt.Text.Length != 0 ||datetxt.Text.Length!=0)
             {
-                int x = controllerobj.AddArtwork(Int32.Parse(artworkidtxt.Text), titletxt.Text, dimtxt.Text, datetxt.Text, descriptiontxt.Text, Int32.Parse(artistidtxt.Text));
+                int x = controllerobj.AddArtwork(Int32.Parse(artworkidtxt.Text), titletxt.Text, dimtxt.Text, datetxt.Text, descriptiontxt.Text, username);
                 if (x == 0)
                 {
                     MessageBox.Show("Could not insert Artwork, use existing artist ID and different artwork ID");
@@ -38,6 +42,13 @@ namespace DB_Project
             {
                 MessageBox.Show("Please fill all fields before clicking insert");
             }
+        }
+
+        private void showartwork_Click(object sender, EventArgs e)
+        {
+          
+            dataGridView1.DataSource = controllerobj.ShowArtworks(username);
+            dataGridView1.Refresh();
         }
     }
 }

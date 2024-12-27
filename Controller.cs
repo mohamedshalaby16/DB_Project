@@ -6,6 +6,8 @@ using System.Data;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Xml.Linq;
+using DB_Project;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DBapplication
 {
@@ -45,5 +47,38 @@ namespace DBapplication
             string query = $"INSERT INTO Artworks Values ({artworkid},'{title}','{dimensions}','{date}','{description}',{artistid})";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable ShowArtworks(int artistid)
+        {
+            string query = $"SELECT   Artworks.ArtworkID,  Artworks.Title,  Artworks.Dimensions,  Artworks.CreationDate,   Artworks.Description FROM     Artworks INNER JOIN   Artists ON Artworks.ArtistID = Artists.ArtistID WHERE    Artists.ArtistID = {artistid};";
+            return dbMan.ExecuteReader(query);
+        }
+        public int ChangeArtistPass(string newpass,int artistid)
+        {
+            string query = $"UPDATE Artists SET Password = '{newpass}'  WHERE ArtistID = {artistid};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int ChangeGalleryPass(string newpass, int artistid)
+        {
+            string query = $"UPDATE Artists SET Password = '{newpass}'  WHERE ArtistID = {artistid};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AddExhibition(int exhibitionid, string name,string sdate, string edate,int galleryid,int artworkid)
+        {
+            string query = $"  INSERT INTO Exhibitions  VALUES({exhibitionid}, '{name}', '{sdate}', '{edate}', {galleryid}, {artworkid})";
+            return dbMan.ExecuteNonQuery (query);
+
+        }
+
+        public DataTable ShowGallery()
+        {
+            string query = $"SELECT Name , GalleryID FROM Galleries ";
+        return dbMan.ExecuteReader (query);
+        }
+        public DataTable ShowExhibition()
+        {
+            string query = $"SELECT   E.ExhibitionID , E.Name AS ExhibitionName , E.StartDate , E.EndDate, G.Name AS GalleryName,A.Title AS ArtworkTitle, A.Description AS ArtworkDescription FROM     Exhibitions E INNER JOIN   Galleries G ON E.GalleryID = G.GalleryID INNER JOIN     Artworks A ON E.ArtworkID = A.ArtworkID;";
+        return dbMan.ExecuteReader(query) ;
+        }
+
     }
 }

@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.confirmpass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.newpass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DoneButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox2
+            // confirmpass
             // 
-            this.textBox2.Location = new System.Drawing.Point(243, 192);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(309, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.confirmpass.Location = new System.Drawing.Point(243, 192);
+            this.confirmpass.Name = "confirmpass";
+            this.confirmpass.PasswordChar = '*';
+            this.confirmpass.Size = new System.Drawing.Size(309, 22);
+            this.confirmpass.TabIndex = 7;
+            this.confirmpass.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -55,13 +55,13 @@
             this.label2.Text = "Confirm Password";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
+            // newpass
             // 
-            this.textBox1.Location = new System.Drawing.Point(243, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(309, 22);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.newpass.Location = new System.Drawing.Point(243, 80);
+            this.newpass.Name = "newpass";
+            this.newpass.Size = new System.Drawing.Size(309, 22);
+            this.newpass.TabIndex = 5;
+            this.newpass.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -90,9 +90,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DoneButton);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.confirmpass);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.newpass);
             this.Controls.Add(this.label1);
             this.Name = "ChangePassword";
             this.Text = "ChangePassword";
@@ -104,9 +104,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox confirmpass;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox newpass;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button DoneButton;
     }
