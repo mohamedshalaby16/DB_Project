@@ -90,5 +90,18 @@ namespace DBapplication
         return dbMan.ExecuteReader(query) ;
         }
 
+        public int UpdateArtistProfile(string email, string nat, int id)
+        {
+            string query = $"UPDATE Artists SET Email = '{email}', Nationality = '{nat}' WHERE ArtistID = {id};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable ShowHighestBuyer(int artistid)
+        {
+            string query = $"SELECT \r\n    U.Name AS User_Name,\r\n    A.Title AS Artwork_Title,\r\n    O.Price AS Highest_Price\r\nFROM \r\n    Ownership O\r\nJOIN \r\n    Users U ON O.UserID = U.UserID\r\nJOIN \r\n    Artworks A ON O.ArtworkID = A.ArtworkID\r\nJOIN \r\n    Artists R ON A.ArtistID = R.ArtistID\r\nWHERE \r\n    R.ArtistID = {artistid}\r\n    AND O.Price = (\r\n        SELECT MAX(O2.Price)\r\n        FROM Ownership O2\r\n        JOIN Artworks A2 ON O2.ArtworkID = A2.ArtworkID\r\n        JOIN Artists R2 ON A2.ArtistID = R2.ArtistID\r\n        WHERE R2.ArtistID = {artistid}\r\n    );\r\n ";
+            return dbMan.ExecuteReader (query);
+        }
+        
+
     }
 }

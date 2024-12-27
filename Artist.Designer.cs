@@ -42,7 +42,17 @@
             this.insertartworkbrn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.showartwork = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Emailtxt = new System.Windows.Forms.TextBox();
+            this.Nationtxt = new System.Windows.Forms.TextBox();
+            this.Updateinfobtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ShowBuyer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -161,7 +171,7 @@
             // 
             this.showartwork.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.showartwork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showartwork.Location = new System.Drawing.Point(470, 262);
+            this.showartwork.Location = new System.Drawing.Point(461, 245);
             this.showartwork.Name = "showartwork";
             this.showartwork.Size = new System.Drawing.Size(222, 39);
             this.showartwork.TabIndex = 15;
@@ -169,11 +179,107 @@
             this.showartwork.UseVisualStyleBackColor = false;
             this.showartwork.Click += new System.EventHandler(this.showartwork_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(16, 326);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Update Info";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 361);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 16);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Email";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(20, 397);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 16);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Nationality";
+            // 
+            // Emailtxt
+            // 
+            this.Emailtxt.Location = new System.Drawing.Point(114, 361);
+            this.Emailtxt.Name = "Emailtxt";
+            this.Emailtxt.Size = new System.Drawing.Size(198, 22);
+            this.Emailtxt.TabIndex = 19;
+            // 
+            // Nationtxt
+            // 
+            this.Nationtxt.Location = new System.Drawing.Point(114, 397);
+            this.Nationtxt.Name = "Nationtxt";
+            this.Nationtxt.Size = new System.Drawing.Size(198, 22);
+            this.Nationtxt.TabIndex = 20;
+            // 
+            // Updateinfobtn
+            // 
+            this.Updateinfobtn.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Updateinfobtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Updateinfobtn.Location = new System.Drawing.Point(16, 439);
+            this.Updateinfobtn.Name = "Updateinfobtn";
+            this.Updateinfobtn.Size = new System.Drawing.Size(209, 39);
+            this.Updateinfobtn.TabIndex = 21;
+            this.Updateinfobtn.Text = "Update Info";
+            this.Updateinfobtn.UseVisualStyleBackColor = false;
+            this.Updateinfobtn.Click += new System.EventHandler(this.Updateinfobtn_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(391, 326);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(180, 20);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Show Highest Buyer";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(395, 361);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(375, 150);
+            this.dataGridView2.TabIndex = 23;
+            // 
+            // ShowBuyer
+            // 
+            this.ShowBuyer.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ShowBuyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowBuyer.ForeColor = System.Drawing.Color.Black;
+            this.ShowBuyer.Location = new System.Drawing.Point(610, 315);
+            this.ShowBuyer.Name = "ShowBuyer";
+            this.ShowBuyer.Size = new System.Drawing.Size(128, 34);
+            this.ShowBuyer.TabIndex = 24;
+            this.ShowBuyer.Text = "Show Buyer";
+            this.ShowBuyer.UseVisualStyleBackColor = false;
+            this.ShowBuyer.Click += new System.EventHandler(this.ShowBuyer_Click);
+            // 
             // Artist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 522);
+            this.Controls.Add(this.ShowBuyer);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Updateinfobtn);
+            this.Controls.Add(this.Nationtxt);
+            this.Controls.Add(this.Emailtxt);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.showartwork);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.insertartworkbrn);
@@ -191,6 +297,7 @@
             this.Name = "Artist";
             this.Text = "Artist";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +319,14 @@
         private System.Windows.Forms.Button insertartworkbrn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button showartwork;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox Emailtxt;
+        private System.Windows.Forms.TextBox Nationtxt;
+        private System.Windows.Forms.Button Updateinfobtn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button ShowBuyer;
     }
 }

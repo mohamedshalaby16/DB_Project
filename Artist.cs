@@ -50,5 +50,24 @@ namespace DB_Project
             dataGridView1.DataSource = controllerobj.ShowArtworks(username);
             dataGridView1.Refresh();
         }
+
+        private void Updateinfobtn_Click(object sender, EventArgs e)
+        {
+            int x = controllerobj.UpdateArtistProfile(Emailtxt.Text, Nationtxt.Text, username);
+            if(x == 0)
+            {
+                MessageBox.Show("Not Updated");
+            }
+            else
+            {
+                MessageBox.Show("Updated");
+            }
+        }
+
+        private void ShowBuyer_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource=controllerobj.ShowHighestBuyer(username);
+            dataGridView2.Refresh();
+        }
     }
 }

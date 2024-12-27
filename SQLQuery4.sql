@@ -46,8 +46,8 @@ CREATE TABLE  Ownership (
     RecordID int  primary key(RecordID,UserID),
 	UserID int ,
 
-    ArtworkID int not null,
-	Price bigint not null,
+    ArtworkID int not null unique,
+	Price bigint not null, 
     OwnershipDate date not null,
     FOREIGN KEY (ArtworkID) REFERENCES Artworks(ArtworkID) ON DELETE CASCADE,
 	 FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE,
@@ -218,17 +218,7 @@ INSERT INTO Ownership (RecordID,UserID, ArtworkID, Price, OwnershipDate) VALUES
 (27, 7, 27, 780000, '2024-07-22'),
 (28, 8, 28, 220000, '2024-08-05'),
 (29, 9, 29, 980000, '2024-09-15'),
-(30, 10, 30, 620000, '2024-10-20'),
-(31, 1, 5, 1200000, '2024-11-10'),
-(32, 2, 7, 250000, '2024-12-12'),
-(33, 3, 10, 300000, '2025-01-15'),
-(34, 4, 12, 650000, '2025-02-18'),
-(35, 5, 16, 400000, '2025-03-22'),
-(36, 6, 18, 950000, '2025-04-05'),
-(37, 7, 19, 1100000, '2025-05-15'),
-(38, 8, 20, 850000, '2025-06-25'),
-(39, 9, 2, 750000, '2025-07-10'),
-(40, 10, 8, 1800000, '2025-08-14');
+(30, 10, 30, 620000, '2024-10-20');
 
 
 
