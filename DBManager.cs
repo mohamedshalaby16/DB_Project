@@ -16,6 +16,7 @@ namespace DBapplication
         SqlConnection myConnection;
 
         public DBManager()
+
         {
             myConnection = new SqlConnection(DB_Connection_String);
             try
