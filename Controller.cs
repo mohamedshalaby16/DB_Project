@@ -110,17 +110,16 @@ namespace DBapplication
         public DataTable GetHighestAuction(int galleryid)
         {
             string query = $"SELECT AuctionID, SellingPrice, ArtworkID FROM AuctionHouse WHERE GalleryID = '{galleryid}'  ORDER BY SellingPrice DESC";
-            return dbMan.ExecuteReader (query);
-        
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable ViewOwnedArtworks(int id)
         {
             string query = $"SELECT R.ArtworkID,Title,Price FROM Ownership O,Artworks R WHERE R.ArtworkID=O.ArtworkID AND O.UserID= {id}";
             return dbMan.ExecuteReader(query);
         }
 
-        }
-    }
-}
+        
+    
         public int RequestVerification(int id, int artworkid,string date, string status)
         {
             string query = $"INSERT INTO VerificationRequest (UserID,ArtworkID,RequestDate,VerificationStatus) VALUES( {id},{artworkid},'{date}', '{status}');";
@@ -147,5 +146,42 @@ namespace DBapplication
             string query = $"SELECT A.Title, A.ArtworkID FROM Artworks A INNER JOIN VerificationRequest V ON V.ArtworkID = A.ArtworkID  WHERE V.UserID = {id};";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable HighestRated(int galleryID)
+        {
+            string query = $"SELECT A.Title AS Artwork_Title, R.Rating FROM Reviews R , Artworks A , Galleries G , Exhibitions E WHERE R.ArtworkID = A.ArtworkID AND G.GalleryID={galleryID} AND E.ArtworkID = A.ArtworkID AND E.GalleryID = G.GalleryID ORDER BY R.Rating DESC;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable AvgSellingPrice(int id) 
+        {
+            string query = $"SELECT G.Name, AVG(A.SellingPrice) FROM AuctionHouse A, Galleries G WHERE A.GalleryID={id} AND A.GalleryID = G.GalleryID GROUP BY G.Name;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable PendingRequests()
+        {
+            string query = $"SELECT U.Name , U.UserID FROM Users U , VerificationRequest V WHERE V.UserID = U.UserID AND V.VerificationStatus ='Pending';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int UpdateRequestStatus(string st,int id)
+        {
+            string query = $"UPDATE VerificationRequest SET VerificationStatus='{st}' WHERE UserID = {id}; ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int NumPending()
+        {
+            string query = $"SELECT COUNT(*) FROM VerificationRequest WHERE VerificationStatus='Pending';";
+            return (int) dbMan.ExecuteScalar(query);
+        }
+
+        public int InsertAdmin(int id,string pass) 
+        {
+            string query = $"INSERT INTO Admin VALUES({id},'{pass}')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
     }
 }

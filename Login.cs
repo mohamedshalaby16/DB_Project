@@ -28,25 +28,33 @@ namespace DB_Project
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (type == 1)
+            if (textBox1.Text == "" || textBox2.Text == "")
             {
-                Admin f1 = new Admin(Int32.Parse(textBox1.Text));
-                f1.Show();
+                MessageBox.Show("Please Enter Username And Password");
             }
-            else if (type == 2)
-            {
-                User f1 = new User(Int32.Parse(textBox1.Text));
-                f1.Show();
-            }
-            else if (type == 3)
-            {
-                Gallery f1 = new Gallery(Int32.Parse(textBox1.Text));
-                f1.Show();
-            }
-            else if (type == 4)
-            {
-                Artist f1 = new Artist(Int32.Parse(textBox1.Text));
-                f1.Show();
+            else
+            { 
+                
+                if (type == 1)
+                {
+                    Admin f1 = new Admin(Int32.Parse(textBox1.Text));
+                    f1.Show();
+                }
+                else if (type == 2)
+                {
+                    User f1 = new User(Int32.Parse(textBox1.Text));
+                    f1.Show();
+                }
+                else if (type == 3)
+                {
+                    Gallery f1 = new Gallery(Int32.Parse(textBox1.Text));
+                    f1.Show();
+                }
+                else if (type == 4)
+                {
+                    Artist f1 = new Artist(Int32.Parse(textBox1.Text));
+                    f1.Show();
+                }
             }
         }
 
