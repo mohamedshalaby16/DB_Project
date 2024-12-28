@@ -49,6 +49,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.logoutbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -252,11 +253,24 @@
             this.comboBox4.Size = new System.Drawing.Size(287, 24);
             this.comboBox4.TabIndex = 23;
             // 
+            // logoutbtn
+            // 
+            this.logoutbtn.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.logoutbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutbtn.Location = new System.Drawing.Point(47, 561);
+            this.logoutbtn.Name = "logoutbtn";
+            this.logoutbtn.Size = new System.Drawing.Size(188, 45);
+            this.logoutbtn.TabIndex = 29;
+            this.logoutbtn.Text = "LOG OUT";
+            this.logoutbtn.UseVisualStyleBackColor = false;
+            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 621);
+            this.ClientSize = new System.Drawing.Size(1035, 618);
+            this.Controls.Add(this.logoutbtn);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.button4);
@@ -311,5 +325,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button logoutbtn;
     }
 }

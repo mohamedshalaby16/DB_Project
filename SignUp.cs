@@ -21,18 +21,27 @@ namespace DB_Project
         {
             SignupForUser f1 = new SignupForUser();
             f1.Show();
+            Close();
         }
 
         private void signupgallerybtn_Click(object sender, EventArgs e)
         {
             SignupForGallery f1 = new SignupForGallery();
             f1.Show();
+            Close();
         }
 
         private void signupartistbtn_Click(object sender, EventArgs e)
         {
             SignupForArtist f1 = new SignupForArtist();
             f1.Show();
+            Close();
+        }
+
+            
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

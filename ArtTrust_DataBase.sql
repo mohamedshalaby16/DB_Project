@@ -127,26 +127,26 @@ CREATE TABLE VerificationRequest (
 	( 123 , 'pass123');
 	
   INSERT INTO Artists(ArtistID, FirstName, LastName, Password, Email, Nationality) VALUES
-(1, 'Pablo', 'Picasso', 'password123', 'picasso@mail.com', 'Spanish'),
-(2, 'Leonardo', 'da Vinci', 'password123', 'davinci@mail.com', 'Italian'),
-(3, 'Vincent', 'van Gogh', 'password123', 'vangogh@mail.com', 'Dutch'),
-(4, 'Claude', 'Monet', 'password123', 'monet@mail.com', 'French'),
-(5, 'Salvador', 'Dali', 'password123', 'dali@mail.com', 'Spanish'),
-(6, 'Frida', 'Kahlo', 'password123', 'kahlo@mail.com', 'Mexican'),
-(7, 'Andy', 'Warhol', 'password123', 'warhol@mail.com', 'American'),
-(8, 'Georgia', 'O’Keeffe', 'password123', 'okeeffe@mail.com', 'American'),
-(9, 'Edvard', 'Munch', 'password123', 'munch@mail.com', 'Norwegian'),
-(10, 'Jackson', 'Pollock', 'password123', 'pollock@mail.com', 'American'),
-(11, 'Henri', 'Matisse', 'password123', 'matisse@mail.com', 'French'),
-(12, 'Paul', 'Cezanne', 'password123', 'cezanne@mail.com', 'French'),
-(13, 'Michelangelo', 'Buonarroti', 'password123', 'michelangelo@mail.com', 'Italian'),
-(14, 'Rembrandt', 'van Rijn', 'password123', 'rembrandt@mail.com', 'Dutch'),
-(15, 'Raphael', 'Sanzio', 'password123', 'raphael@mail.com', 'Italian'),
-(16, 'Joan', 'Miró', 'password123', 'miro@mail.com', 'Spanish'),
-(17, 'Diego', 'Rivera', 'password123', 'rivera@mail.com', 'Mexican'),
-(18, 'Yayoi', 'Kusama', 'password123', 'kusama@mail.com', 'Japanese'),
-(19, 'Wassily', 'Kandinsky', 'password123', 'kandinsky@mail.com', 'Russian'),
-(20, 'Piet', 'Mondrian', 'password123', 'mondrian@mail.com', 'Dutch');
+(1, 'Pablo', 'Picasso', 'password1', 'picasso@mail.com', 'Spanish'),
+(2, 'Leonardo', 'da Vinci', 'password2', 'davinci@mail.com', 'Italian'),
+(3, 'Vincent', 'van Gogh', 'password3', 'vangogh@mail.com', 'Dutch'),
+(4, 'Claude', 'Monet', 'password4', 'monet@mail.com', 'French'),
+(5, 'Salvador', 'Dali', 'password5', 'dali@mail.com', 'Spanish'),
+(6, 'Frida', 'Kahlo', 'password6', 'kahlo@mail.com', 'Mexican'),
+(7, 'Andy', 'Warhol', 'password7', 'warhol@mail.com', 'American'),
+(8, 'Georgia', 'O’Keeffe', 'password8', 'okeeffe@mail.com', 'American'),
+(9, 'Edvard', 'Munch', 'password9', 'munch@mail.com', 'Norwegian'),
+(10, 'Jackson', 'Pollock', 'password10', 'pollock@mail.com', 'American'),
+(11, 'Henri', 'Matisse', 'password11', 'matisse@mail.com', 'French'),
+(12, 'Paul', 'Cezanne', 'password12', 'cezanne@mail.com', 'French'),
+(13, 'Michelangelo', 'Buonarroti', 'password13', 'michelangelo@mail.com', 'Italian'),
+(14, 'Rembrandt', 'van Rijn', 'password14', 'rembrandt@mail.com', 'Dutch'),
+(15, 'Raphael', 'Sanzio', 'password15', 'raphael@mail.com', 'Italian'),
+(16, 'Joan', 'Miró', 'password16', 'miro@mail.com', 'Spanish'),
+(17, 'Diego', 'Rivera', 'password17', 'rivera@mail.com', 'Mexican'),
+(18, 'Yayoi', 'Kusama', 'password18', 'kusama@mail.com', 'Japanese'),
+(19, 'Wassily', 'Kandinsky', 'password19', 'kandinsky@mail.com', 'Russian'),
+(20, 'Piet', 'Mondrian', 'password20', 'mondrian@mail.com', 'Dutch');
 
 
 INSERT INTO Artworks (ArtworkID, Title, Dimensions, CreationDate, Description, ArtistID) VALUES
@@ -369,4 +369,4 @@ INSERT INTO AuctionHouse ( GalleryID, ArtworkID, Name, SellingPrice) VALUES
 ( 7, 17, 'Renaissance Reverie Auction', 200000),
 ( 8, 18, 'Modernist Revolution Auction', 950000),
 ( 9, 19, 'Contemporary Visions Auction', 1100000),
-( 10, 20, 'Epic Narratives Auction', 850000);
+( 10, 20, 'Epic Narratives Auction', 850000);

@@ -74,5 +74,12 @@ namespace DB_Project
         {
 
         }
+
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            ArtTrust f1 = new ArtTrust();
+            f1.Show();
+            Close();
+        }
     }
 }

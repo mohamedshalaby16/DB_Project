@@ -50,6 +50,7 @@
             this.SetButton = new System.Windows.Forms.Button();
             this.PendingBtn = new System.Windows.Forms.Button();
             this.NumPendingtxt = new System.Windows.Forms.TextBox();
+            this.logoutbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -242,11 +243,24 @@
             this.NumPendingtxt.Size = new System.Drawing.Size(100, 22);
             this.NumPendingtxt.TabIndex = 20;
             // 
+            // logoutbtn
+            // 
+            this.logoutbtn.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.logoutbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutbtn.Location = new System.Drawing.Point(291, 911);
+            this.logoutbtn.Name = "logoutbtn";
+            this.logoutbtn.Size = new System.Drawing.Size(188, 45);
+            this.logoutbtn.TabIndex = 30;
+            this.logoutbtn.Text = "LOG OUT";
+            this.logoutbtn.UseVisualStyleBackColor = false;
+            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 968);
+            this.Controls.Add(this.logoutbtn);
             this.Controls.Add(this.NumPendingtxt);
             this.Controls.Add(this.PendingBtn);
             this.Controls.Add(this.SetButton);
@@ -301,5 +315,6 @@
         private System.Windows.Forms.Button SetButton;
         private System.Windows.Forms.Button PendingBtn;
         private System.Windows.Forms.TextBox NumPendingtxt;
+        private System.Windows.Forms.Button logoutbtn;
     }
 }

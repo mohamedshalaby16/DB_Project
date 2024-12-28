@@ -89,6 +89,13 @@ namespace DB_Project
             }
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ArtTrust f1= new ArtTrust();
+            f1.Show();
+            Close();
+        }
     }
 }
     

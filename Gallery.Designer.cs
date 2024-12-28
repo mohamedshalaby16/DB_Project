@@ -52,6 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.highestauctionbtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.logoutbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -272,11 +273,24 @@
             this.dataGridView2.Size = new System.Drawing.Size(459, 127);
             this.dataGridView2.TabIndex = 27;
             // 
+            // logoutbtn
+            // 
+            this.logoutbtn.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.logoutbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutbtn.Location = new System.Drawing.Point(264, 543);
+            this.logoutbtn.Name = "logoutbtn";
+            this.logoutbtn.Size = new System.Drawing.Size(188, 45);
+            this.logoutbtn.TabIndex = 28;
+            this.logoutbtn.Text = "LOG OUT";
+            this.logoutbtn.UseVisualStyleBackColor = false;
+            this.logoutbtn.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Gallery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 569);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.logoutbtn);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.highestauctionbtn);
             this.Controls.Add(this.label11);
@@ -337,5 +351,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button highestauctionbtn;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button logoutbtn;
     }
 }

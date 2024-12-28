@@ -182,6 +182,25 @@ namespace DBapplication
             string query = $"INSERT INTO Admin VALUES({id},'{pass}')";
             return dbMan.ExecuteNonQuery(query);
         }
-
+        public int CheckAdminPass(int id, string pass)
+        {
+            string query = $"SELECT COUNT(*) FROM Admin WHERE AdminID={id} AND Password='{pass}'";
+            return (int)dbMan.ExecuteScalar(query); 
+        }
+        public int CheckUserPass(int id, string pass)
+        {
+            string query = $"SELECT COUNT(*) FROM Users WHERE UserID={id} AND Password='{pass}'";
+            return (int)dbMan.ExecuteScalar(query); 
+        }
+        public int CheckArtistPass(int id, string pass)
+        {
+            string query = $"SELECT COUNT(*) FROM Artists WHERE ArtistID={id} AND Password='{pass}'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int CheckGalleryPass(int id, string pass)
+        {
+            string query = $"SELECT COUNT(*) FROM Galleries WHERE GalleryID={id} AND Password='{pass}'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
     }
 }

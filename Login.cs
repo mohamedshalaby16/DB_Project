@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBapplication;
 
 namespace DB_Project
 {
@@ -14,10 +15,12 @@ namespace DB_Project
     {
         int type;
         int username = 0;
+        Controller controllerobj;
         public Login(int t)
         {
             // 1 for admin, 2 for user , 3 for gallery , 4 for artist
             InitializeComponent();
+            controllerobj=new Controller();
             type = t;
         }
 
@@ -34,26 +37,61 @@ namespace DB_Project
             }
             else
             { 
-                
                 if (type == 1)
                 {
-                    Admin f1 = new Admin(Int32.Parse(textBox1.Text));
-                    f1.Show();
+                    int x = controllerobj.CheckAdminPass(Int32.Parse(textBox1.Text), textBox2.Text);
+                    if(x==0)
+                    { 
+                        MessageBox.Show("Wrong password or username");
+                    }
+                    else
+                    {
+                        Admin f1 = new Admin(Int32.Parse(textBox1.Text));
+                        f1.Show();
+                        Close();
+                    }
                 }
                 else if (type == 2)
                 {
-                    User f1 = new User(Int32.Parse(textBox1.Text));
-                    f1.Show();
+                    int x = controllerobj.CheckUserPass(Int32.Parse(textBox1.Text), textBox2.Text);
+                    if (x == 0)
+                    {
+                        MessageBox.Show("Wrong password or username");
+                    }
+                    else
+                    {
+                        User f1 = new User(Int32.Parse(textBox1.Text));
+                        f1.Show();
+                        Close();
+                    }
                 }
                 else if (type == 3)
                 {
-                    Gallery f1 = new Gallery(Int32.Parse(textBox1.Text));
-                    f1.Show();
+                    int x = controllerobj.CheckGalleryPass(Int32.Parse(textBox1.Text), textBox2.Text);
+                    if (x == 0)
+                    {
+                        MessageBox.Show("Wrong password or username");
+                    }
+                    else
+                    {
+                        Gallery f1 = new Gallery(Int32.Parse(textBox1.Text));
+                        f1.Show();
+                        Close();
+                    }
                 }
                 else if (type == 4)
                 {
-                    Artist f1 = new Artist(Int32.Parse(textBox1.Text));
-                    f1.Show();
+                    int x = controllerobj.CheckArtistPass(Int32.Parse(textBox1.Text), textBox2.Text);
+                    if (x == 0)
+                    {
+                        MessageBox.Show("Wrong password or username");
+                    }
+                    else
+                    {
+                        Artist f1 = new Artist(Int32.Parse(textBox1.Text));
+                        f1.Show();
+                        Close();
+                    }
                 }
             }
         }
@@ -71,24 +109,33 @@ namespace DB_Project
                 {
                     ChangePassword f1 = new ChangePassword(type, Int32.Parse(textBox1.Text));
                     f1.Show();
+                    Close();
                 }
                 else if (type == 2)
                 {
                     ChangePassword f1 = new ChangePassword(type, Int32.Parse(textBox1.Text));
                     f1.Show();
+                    Close();
                 }
                 else if (type == 3)
                 {
                     ChangePassword f1 = new ChangePassword(type, Int32.Parse(textBox1.Text));
                     f1.Show();
+                    Close();
                 }
                 else if (type == 4)
                 {
                     ChangePassword f1 = new ChangePassword(type, Int32.Parse(textBox1.Text));
                     f1.Show();
+                    Close() ;
                 }
 
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
